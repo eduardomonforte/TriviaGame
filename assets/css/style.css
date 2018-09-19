@@ -1,10 +1,25 @@
 body {
     background-color: #6B8CFC;
+    font-family: 'SMB NES', Arial, sans-serif;
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
+#timer {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    text-align: right;
+}
+
+@font-face {
+    font-family: "SMB NES";
+    src: url("fonts/super-mario-bros-nes.ttf") format("truetype");
 }
 
 #logo {
     position: absolute;
-    top: 45%;
+    top: 35%;
     left: 50%;
     margin-top: -176px;
     margin-left: -352px;
