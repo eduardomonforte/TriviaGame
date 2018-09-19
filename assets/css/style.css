@@ -12,6 +12,12 @@ body {
     text-align: right;
 }
 
+#question-counter {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
 @font-face {
     font-family: "SMB NES";
     src: url("fonts/super-mario-bros-nes.ttf") format("truetype");

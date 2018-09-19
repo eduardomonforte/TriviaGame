@@ -11,14 +11,18 @@ var loseLife = document.createElement("audio");
 
 $("#play-button").on("click", function() {
 
+    $("#play-button").hide();
+    bgMusic.load();
     bgMusic.play();
     function thirtySeconds() {
         bgMusic.pause();
+        hurryMusic.load();
         hurryMusic.play();
     }
     function sixtySeconds() {
         hurryMusic.pause();
         loseLife.play();
+        $("#play-button").show();
     }
 
     setTimeout (thirtySeconds, 30000);
