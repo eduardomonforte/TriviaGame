@@ -1,6 +1,8 @@
 $(document).ready(); {
 
-console.log("I'm linked!")
+console.log("BOWSER WAS HERE!")
+
+// Audio Variables
 
 var bgMusic = document.createElement("audio");
     bgMusic.setAttribute("src", "assets/audio/music/overworld.mp3");
@@ -9,24 +11,31 @@ var hurryMusic = document.createElement("audio");
 var loseLife = document.createElement("audio");
     loseLife.setAttribute("src", "assets/audio/sounds/loselife.wav")
 
+// This function runs when you click the Play button.
+
 $("#play-button").on("click", function() {
 
     $("#play-button").hide();
     bgMusic.load();
+    hurryMusic.load();
+    loseLife.load();
     bgMusic.play();
     function thirtySeconds() {
         bgMusic.pause();
-        hurryMusic.load();
         hurryMusic.play();
     }
     function sixtySeconds() {
         hurryMusic.pause();
         loseLife.play();
-        $("#play-button").show();
+        loseLife.onended = function() {
+            $("#play-button").show();
+        }
     }
 
+// Timeouts are defined here:
+
     setTimeout (thirtySeconds, 30000);
-    setTimeout (sixtySeconds, 60000)
+    setTimeout (sixtySeconds, 60000);
 
 })
 
