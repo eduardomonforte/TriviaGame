@@ -2,6 +2,8 @@ $(document).ready(); {
 
 console.log("BOWSER WAS HERE!")
 
+round = 1;
+
 // Audio Variables:
 
 var bgMusic = document.createElement("audio");
@@ -31,6 +33,12 @@ $("#play-button").on("click", function() {
         }
         if (time === 0) {
             stop();
+            loseLife.play();
+            loseLife.onended = function() {
+            $("#play-button").show();
+            $("#logo").show();
+            $("#time-left").html("60");
+        }
         }
     }
 
@@ -40,7 +48,9 @@ $("#play-button").on("click", function() {
 
     run();
 
+    $("#question-round").html(round++)
     $("#play-button").hide();
+    $("#logo").hide();
     bgMusic.load();
     hurryMusic.load();
     loseLife.load();
@@ -51,10 +61,6 @@ $("#play-button").on("click", function() {
     }
     function sixtySeconds() {
         hurryMusic.pause();
-        loseLife.play();
-        loseLife.onended = function() {
-            $("#play-button").show();
-        }
     }
 
 // Timeouts are defined here:

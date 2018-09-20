@@ -26,13 +26,12 @@ body {
 }
 
 #trivia-container {
-    display: none;
     position: absolute;
     top: 35%;
     left: 50%;
     margin-top: -176px;
     margin-left: -352px;
-    z-index: 99;
+    z-index: 98;
 }
 
 #question-tracker {
