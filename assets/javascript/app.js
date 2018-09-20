@@ -15,6 +15,31 @@ var loseLife = document.createElement("audio");
 
 $("#play-button").on("click", function() {
 
+    var time = 60;
+    var intervalId;
+
+    function run() {
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 1000);
+    }
+
+    function decrement() {
+        time--;
+        $("#time-left").html(time);
+        if (time < 10) {
+            $("#time-left").html('0' + time);
+        }
+        if (time === 0) {
+            stop();
+        }
+    }
+
+    function stop() {
+        clearInterval(intervalId);
+    }
+
+    run();
+
     $("#play-button").hide();
     bgMusic.load();
     hurryMusic.load();
