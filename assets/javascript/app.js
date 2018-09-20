@@ -2,7 +2,7 @@ $(document).ready(); {
 
 console.log("BOWSER WAS HERE!")
 
-// Audio Variables
+// Audio Variables:
 
 var bgMusic = document.createElement("audio");
     bgMusic.setAttribute("src", "assets/audio/music/overworld.mp3");
