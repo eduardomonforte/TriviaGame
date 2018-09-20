@@ -58,14 +58,14 @@ body {
 
 #cloud2 {
     position: absolute;
-    left: 80%;
-    top: 60%;
+    left: 70%;
+    top: 10%;
 }
 
 #cloud3 {
     position: absolute;
-    left: 70%;
-    top: 15%;
+    left: 75%;
+    top: 50%;
 }
 
 #mario {
