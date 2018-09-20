@@ -1,21 +1,25 @@
 $(document).ready(); {
 
-console.log("BOWSER WAS HERE!")
+console.log("BOWSER WAS HERE!");
 
-round = 1;
+var round = 1;
+
+$("#trivia-container").hide();
 
 // Audio Variables:
 
 var bgMusic = document.createElement("audio");
     bgMusic.setAttribute("src", "assets/audio/music/overworld.mp3");
 var hurryMusic = document.createElement("audio");
-    hurryMusic.setAttribute("src", "assets/audio/music/overworld-hurry.mp3")
+    hurryMusic.setAttribute("src", "assets/audio/music/overworld-hurry.mp3");
 var loseLife = document.createElement("audio");
-    loseLife.setAttribute("src", "assets/audio/sounds/lose-life.wav")
+    loseLife.setAttribute("src", "assets/audio/sounds/lose-life.wav");
 
-// This function runs when you click the Play button.
+// This function runs when you press the Enter key:
 
-$("#play-button").on("click", function() {
+    $(document).keyup(function(keyPressed) {
+
+    if (keyPressed.keyCode == 13) {
 
     var time = 60;
     var intervalId;
@@ -29,14 +33,15 @@ $("#play-button").on("click", function() {
         time--;
         $("#time-left").html(time);
         if (time < 10) {
-            $("#time-left").html('0' + time);
+            $("#time-left").html("0" + time);
         }
         if (time === 0) {
             stop();
             loseLife.play();
             loseLife.onended = function() {
-            $("#play-button").show();
+            $("#press-enter").show();
             $("#logo").show();
+            $("#trivia-container").hide();
             $("#time-left").html("60");
         }
         }
@@ -48,14 +53,15 @@ $("#play-button").on("click", function() {
 
     run();
 
-    $("#question-round").html(round++)
-    $("#play-button").hide();
+    $("#trivia-container").show();
+    $("#question-round").html(round++);
+    $("#press-enter").hide();
     $("#logo").hide();
     bgMusic.load();
     hurryMusic.load();
     loseLife.load();
     bgMusic.play();
-    function thirtySeconds() {
+    function fortySeconds() {
         bgMusic.pause();
         hurryMusic.play();
     }
@@ -65,9 +71,11 @@ $("#play-button").on("click", function() {
 
 // Timeouts are defined here:
 
-    setTimeout (thirtySeconds, 30000);
+    setTimeout (fortySeconds, 40000);
     setTimeout (sixtySeconds, 60000);
 
-})
+    }
+
+    });
 
 }
