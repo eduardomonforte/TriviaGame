@@ -3,6 +3,7 @@ $(document).ready(); {
 console.log("BOWSER WAS HERE!");
 
 var round = 1;
+var running = false;
 
 $("#trivia-container").hide();
 
@@ -19,7 +20,9 @@ var loseLife = document.createElement("audio");
 
     $(document).keyup(function(keyPressed) {
 
-    if (keyPressed.keyCode == 13) {
+    if (keyPressed.keyCode == 13 && running == false) {
+
+    running = true;
 
     var time = 60;
     var intervalId;
@@ -27,6 +30,24 @@ var loseLife = document.createElement("audio");
     function run() {
         clearInterval(intervalId);
         intervalId = setInterval(decrement, 1000);
+        $("#trivia-container").show();
+        $("#question-round").html(round++);
+        $("#press-enter").hide();
+        $("#logo").hide();
+        bgMusic.load();
+        hurryMusic.load();
+        loseLife.load();
+        bgMusic.play();
+        function fortySeconds() {
+            bgMusic.pause();
+            hurryMusic.play();
+        }
+        function sixtySeconds() {
+            hurryMusic.pause();
+        }
+
+        setTimeout (fortySeconds, 40000);
+        setTimeout (sixtySeconds, 60000);
     }
 
     function decrement() {
@@ -43,6 +64,7 @@ var loseLife = document.createElement("audio");
             $("#logo").show();
             $("#trivia-container").hide();
             $("#time-left").html("60");
+            running = false;
         }
         }
     }
@@ -52,27 +74,6 @@ var loseLife = document.createElement("audio");
     }
 
     run();
-
-    $("#trivia-container").show();
-    $("#question-round").html(round++);
-    $("#press-enter").hide();
-    $("#logo").hide();
-    bgMusic.load();
-    hurryMusic.load();
-    loseLife.load();
-    bgMusic.play();
-    function fortySeconds() {
-        bgMusic.pause();
-        hurryMusic.play();
-    }
-    function sixtySeconds() {
-        hurryMusic.pause();
-    }
-
-// Timeouts are defined here:
-
-    setTimeout (fortySeconds, 40000);
-    setTimeout (sixtySeconds, 60000);
 
     }
 
