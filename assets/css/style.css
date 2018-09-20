@@ -1,4 +1,4 @@
-/* SMB font */
+/* SMB NES font */
 
 @font-face {
     font-family: "SMB NES";
@@ -25,10 +25,21 @@ body {
     z-index: 99;
 }
 
-#question-counter {
+#trivia-container {
+    display: none;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    margin-top: -176px;
+    margin-left: -352px;
+    z-index: 99;
+}
+
+#question-tracker {
     position: absolute;
     top: 16px;
     left: 16px;
+    z-index: 99;
 }
 
 #timer {
@@ -36,6 +47,7 @@ body {
     top: 16px;
     right: 16px;
     text-align: right;
+    z-index: 99;
 }
 
 #cloud1 {
@@ -56,12 +68,31 @@ body {
     top: 15%;
 }
 
+#mario {
+    position: absolute;
+    bottom: 64px;
+    left: 64px;
+}
+
+#flagpole-up {
+    position: absolute;
+    bottom: 64px;
+    right: 64px;
+}
+
+#flagpole-down {
+    display: none;
+    position: absolute;
+    bottom: 64px;
+    right: 64px;
+}
+
 footer {
     position: absolute;
     bottom: 0;
     height: 64px;
     width: 100%;
-    background-image: url(../images/sprites/block\ 4x.png);
+    background-image: url(../images/sprites/block.png);
 }
 
 /* Play button */

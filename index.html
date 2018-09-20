@@ -8,7 +8,7 @@
     <!-- Page Title -->
     <title>Super Mario Trivia</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/sprites/qblock 4x.png">
+    <link rel="icon" type="image/png" href="assets/images/sprites/qblock.png">
     <!-- Reset CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!-- Local CSS -->
@@ -19,17 +19,15 @@
 <!-- The following elements are absolute-positioned -->
 
     <!-- Super Mario Trivia Logo -->
-    <img id="logo" src="assets/images/logo/Super Mario Trivia 4x.png">
+    <img id="logo" src="assets/images/logo/super-mario-trivia.png">
 
-    <!-- Clouds -->
-    <img id="cloud1" src="assets/images/sprites/cloud 4x.png">
-    <img id="cloud2" src="assets/images/sprites/cloud 4x.png">
-    <img id="cloud3" src="assets/images/sprites/cloud 4x.png">
+    <!-- Trivia Container -->
+    <img id="trivia-container" src="assets/images/logo/logo-container.png">
     
-    <!-- Question Counter -->
-    <div id="question-counter">
+    <!-- Question Tracker -->
+    <div id="question-tracker">
     <p>QUESTION</p>
-    <p>1-<span id="question-number">1</span></p>
+    <p><span id="question-round">1</span>-<span id="question-number">1</span></p>
     </div>
 
     <!-- Timer -->
@@ -38,12 +36,27 @@
     <p>0<span id="time-left">60</span></p>
     </div>
 
-    <!-- Floor / Footer -->
+    <!-- Clouds -->
+    <img id="cloud1" src="assets/images/sprites/cloud.png">
+    <img id="cloud2" src="assets/images/sprites/cloud.png">
+    <img id="cloud3" src="assets/images/sprites/cloud.png">
+
+    <!-- Mario -->
+    <img id="mario" src="assets/images/sprites/mario.png">
+
+    <!-- Flagpoles -->
+
+    <img id="flagpole-up" src="assets/images/sprites/flagpole-up.png">
+    <img id="flagpole-down" src="assets/images/sprites/flagpole-down.png">
+
+    <!-- Floor -->
     <footer></footer>
 
 <!-- Absolute-positioned elements end here -->
 
     <br>
+
+    <!-- Play button -->
 
     <div id="button-container">
     <button id="play-button">Play</button>

@@ -7,9 +7,9 @@ console.log("BOWSER WAS HERE!")
 var bgMusic = document.createElement("audio");
     bgMusic.setAttribute("src", "assets/audio/music/overworld.mp3");
 var hurryMusic = document.createElement("audio");
-    hurryMusic.setAttribute("src", "assets/audio/music/hurry.mp3")
+    hurryMusic.setAttribute("src", "assets/audio/music/overworld-hurry.mp3")
 var loseLife = document.createElement("audio");
-    loseLife.setAttribute("src", "assets/audio/sounds/loselife.wav")
+    loseLife.setAttribute("src", "assets/audio/sounds/lose-life.wav")
 
 // This function runs when you click the Play button.
 
