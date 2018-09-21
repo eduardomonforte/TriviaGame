@@ -11,6 +11,11 @@ var loseLife = document.createElement("audio");
 loseLife.setAttribute("src", "assets/audio/sounds/lose-life.wav");
 loseLife.load();
 
+// The interface requires some elements to be hidden by default:
+
+$("#trivia-container").hide();
+$("#flagpole-down").hide();
+
 $(document).ready(); {
 
     // Initial State Variables
@@ -21,11 +26,6 @@ $(document).ready(); {
     var incorrect = 0;
     var unanswered = 0;
     var running = false;
-
-    // The interface requires some elements to be hidden by default:
-
-    $("#trivia-container").hide();
-    $("#flagpole-down").hide();
 
     // This function runs when you press a key:
 
