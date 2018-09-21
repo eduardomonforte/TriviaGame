@@ -1,11 +1,11 @@
-/* SMB NES font */
+/* SMB NES FONT */
 
 @font-face {
     font-family: "SMB NES";
     src: url("fonts/super-mario-bros-nes.ttf") format("truetype");
 }
 
-/* General style */
+/* GENERAL STYLE */
 
 body {
     background-color: #6B8CFC;
@@ -14,7 +14,7 @@ body {
     font-size: 24px;
 }
 
-/* Absolute-positioned elements */
+/* ABSOLUTE-POSITIONED ELEMENTS */
 
 #logo {
     position: absolute;
@@ -78,23 +78,22 @@ body {
 #mario {
     position: absolute;
     bottom: 64px;
-    left: 64px;
+    left: 5%;
 }
 
 #flagpole-up {
     position: absolute;
     bottom: 64px;
-    right: 64px;
+    right: 5%;
 }
 
 #flagpole-down {
-    display: none;
     position: absolute;
     bottom: 64px;
-    right: 64px;
+    right: 5%;
 }
 
-footer {
+#floor {
     position: absolute;
     bottom: 0;
     height: 64px;
