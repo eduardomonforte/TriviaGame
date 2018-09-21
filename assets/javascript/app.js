@@ -4,17 +4,13 @@ console.log("BOWSER WAS HERE!");
 
 var bgMusic = document.createElement("audio");
 bgMusic.setAttribute("src", "assets/audio/music/overworld.mp3");
+bgMusic.load();
 var hurryMusic = document.createElement("audio");
 hurryMusic.setAttribute("src", "assets/audio/music/overworld-hurry.mp3");
 hurryMusic.load();
 var loseLife = document.createElement("audio");
 loseLife.setAttribute("src", "assets/audio/sounds/lose-life.wav");
 loseLife.load();
-
-// The interface requires some elements to be hidden by default:
-
-$("#trivia-container").hide();
-$("#flagpole-down").hide();
 
 $(document).ready(); {
 
@@ -35,8 +31,7 @@ $(document).ready(); {
 
         if (keyPressed.keyCode == 13 && running == false) {
 
-            // The boolean changes when the game is running.
-            // Ths prevents the Enter key from having any effect during the game.
+            // Changing the boolean blocks the Enter key during the game:
 
             running = true;
 
@@ -50,9 +45,9 @@ $(document).ready(); {
                 clearInterval(intervalId);
                 intervalId = setInterval(decrement, 1000);
                 $("#trivia-container").show();
-                $("#question-round").html(round++);
                 $("#press-enter").hide();
                 $("#logo").hide();
+                $("#question-round").html(round++);
                 bgMusic.load();
                 hurryMusic.load();
                 loseLife.load();
