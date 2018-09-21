@@ -2,15 +2,9 @@ console.log("BOWSER WAS HERE!");
 
 // Audio Variables
 
-var bgMusic = document.createElement("audio");
-bgMusic.setAttribute("src", "assets/audio/music/overworld.mp3");
-bgMusic.load();
-var hurryMusic = document.createElement("audio");
-hurryMusic.setAttribute("src", "assets/audio/music/overworld-hurry.mp3");
-hurryMusic.load();
-var loseLife = document.createElement("audio");
-loseLife.setAttribute("src", "assets/audio/sounds/lose-life.wav");
-loseLife.load();
+var bgMusic = document.getElementById("bg-music");
+var hurryMusic = document.getElementById("hurry-music");
+var loseLife = document.getElementById("lose-life");
 
 $(document).ready(); {
 
