@@ -2,9 +2,12 @@ console.log("BOWSER WAS HERE!");
 
 // Audio Variables
 
-var bgMusic = document.getElementById("bg-music");
-var hurryMusic = document.getElementById("hurry-music");
-var loseLife = document.getElementById("lose-life");
+var bgMusic = document.createElement("audio");
+bgMusic.setAttribute("src", "assets/audio/music/overworld.mp3");
+var hurryMusic = document.createElement('audio');
+hurryMusic.setAttribute("src", "assets/audio/music/overworld-hurry.mp3");
+var loseLife = document.createElement("audio");
+loseLife.setAttribute("src", "assets/audio/sounds/lose-life.wav");
 
 $(document).ready(); {
 
@@ -21,7 +24,7 @@ $(document).ready(); {
 
     $(document).keyup(function(keyPressed) {
 
-        // This function runs only if you press the Enter key:
+        // This function only runs if you press the Enter key:
 
         if (keyPressed.keyCode == 13 && running == false) {
 
