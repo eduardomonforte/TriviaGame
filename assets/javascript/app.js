@@ -50,6 +50,12 @@ $(document).ready(); {
                 loseLife.load();
                 bgMusic.play();
 
+                $("#question-box").show();
+                $("#option1").show();
+                $("#option2").show();
+                $("#option3").show();
+                $("#option4").show();
+
             }
 
             function decrement() {
@@ -75,6 +81,12 @@ $(document).ready(); {
                     clearInterval(intervalId);
                     hurryMusic.pause();
                     loseLife.play();
+
+                    $("#question-box").hide();
+                    $("#option1").hide();
+                    $("#option2").hide();
+                    $("#option3").hide();
+                    $("#option4").hide();
 
                     loseLife.onended = function() {
 

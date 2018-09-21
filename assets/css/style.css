@@ -106,3 +106,70 @@ body {
     width: 100%;
     background-image: url(../images/sprites/block.png);
 }
+
+/* TRIVIA */
+
+#question-box {
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    padding-top: 23px;
+    margin-top: -144px;
+    margin-left: -320px;
+    height: 140px;
+    width: 640px;
+    z-index: 101;
+}
+
+#option1 {
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    padding-top: 23px;
+    margin-top: 4px;
+    margin-left: -320px;
+    height: 70px;
+    width: 320px;
+    z-index: 102;
+}
+
+#option2 {
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    padding-top: 23px;
+    margin-top: 4px;
+    margin-left: 0px;
+    height: 70px;
+    width: 320px;
+    z-index: 102;
+}
+
+#option3 {
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    padding-top: 23px;
+    margin-top: 74px;
+    margin-left: -320px;
+    height: 70px;
+    width: 320px;
+    z-index: 102;
+}
+
+#option4 {
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    padding-top: 23px;
+    margin-top: 74px;
+    margin-left: 0px;
+    height: 70px;
+    width: 320px;
+    z-index: 102;
+}
