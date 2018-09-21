@@ -1,6 +1,17 @@
-$(document).ready(); {
+console.log("BOWSER WAS HERE!");
 
-    console.log("BOWSER WAS HERE!");
+// Audio Variables
+
+var bgMusic = document.createElement("audio");
+bgMusic.setAttribute("src", "assets/audio/music/overworld.mp3");
+var hurryMusic = document.createElement("audio");
+hurryMusic.setAttribute("src", "assets/audio/music/overworld-hurry.mp3");
+hurryMusic.load();
+var loseLife = document.createElement("audio");
+loseLife.setAttribute("src", "assets/audio/sounds/lose-life.wav");
+loseLife.load();
+
+$(document).ready(); {
 
     // Initial State Variables
 
@@ -10,18 +21,6 @@ $(document).ready(); {
     var incorrect = 0;
     var unanswered = 0;
     var running = false;
-
-    // Audio Variables
-
-    var bgMusic = document.createElement("audio");
-    bgMusic.setAttribute("src", "assets/audio/music/overworld.mp3");
-    bgMusic.load();
-    var hurryMusic = document.createElement("audio");
-    hurryMusic.setAttribute("src", "assets/audio/music/overworld-hurry.mp3");
-    hurryMusic.load();
-    var loseLife = document.createElement("audio");
-    loseLife.setAttribute("src", "assets/audio/sounds/lose-life.wav");
-    loseLife.load();
 
     // The interface requires some elements to be hidden by default:
 
