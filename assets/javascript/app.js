@@ -1,5 +1,51 @@
 console.log("BOWSER WAS HERE!");
 
+// Questions
+
+var questions = [
+
+    {
+
+        question: "WHAT WAS MARIO'S ORIGINAL NAME?",
+        options: ["MARIO", "MR. VIDEO", "OSSAN", "JUMPMAN"],
+        correct: "OSSAN",
+
+    },
+
+    {
+
+        question: "WHO WAS MARIO'S FIRST ENEMY?",
+        options: ["LUIGI", "DONKEY KONG", "BOWSER", "WARIO"],
+        correct: "DONKEY KONG",
+
+    },
+
+    {
+
+        question: "WHEN WAS SUPER MARIO BROS. RELEASED?",
+        options: ["1982", "1983", "1984", "1985"],
+        correct: "1985",
+
+    },
+
+    {
+
+        question: "WHAT WAS MARIO'S ORIGINAL PROFESSION?",
+        options: ["CARPENTER", "PLUMBER", "ELECTRICIAN", "PAINTER"],
+        correct: "CARPENTER",
+
+    },
+
+    {
+
+        question: "WHAT MAKES MARIO GROW IN SIZE?",
+        options: ["COIN", "FIRE FLOWER", "MUSHROOM", "STAR"],
+        correct: "MUSHROOM",
+
+    },
+
+];
+
 // Audio Variables
 
 var bgMusic = document.createElement("audio");
@@ -16,7 +62,7 @@ $(document).ready(); {
     // Initial State Variables
 
     var round = 1;
-    var question = 1;
+    var questionNumber = 1;
     var correct = 0;
     var incorrect = 0;
     var unanswered = 0;
@@ -99,8 +145,8 @@ $(document).ready(); {
                         
                             if (!roundReset) {
 
-                                question++;
-                                $(".question-number").html(question);
+                                questionNumber++;
+                                $(".question-number").html(questionNumber);
 
                             };
 
@@ -150,8 +196,8 @@ $(document).ready(); {
                         $("#logo").show();
                         $("#trivia-container").hide();
                         $("#time-left").html("60");
-                        question = 1;
-                        $(".question-number").html(question);
+                        questionNumber = 1;
+                        $(".question-number").html(questionNumber);
 
                     };
 

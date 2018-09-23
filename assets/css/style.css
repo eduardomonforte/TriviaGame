@@ -81,10 +81,34 @@ body {
     top: 50%;
 }
 
-#mario {
+#mario1 {
     position: absolute;
     bottom: 64px;
     left: 5%;
+}
+
+#mario2 {
+    position: absolute;
+    bottom: 64px;
+    left: 23%;
+}
+
+#mario3 {
+    position: absolute;
+    bottom: 64px;
+    left: 41%;
+}
+
+#mario4 {
+    position: absolute;
+    bottom: 64px;
+    right: 41%;
+}
+
+#mario5 {
+    position: absolute;
+    bottom: 64px;
+    right: 23%;
 }
 
 #flagpole-up {
