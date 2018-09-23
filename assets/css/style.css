@@ -8,7 +8,7 @@
 /* GENERAL STYLE */
 
 body {
-    background-color: #6B8CFC;
+    background-color: #6B8CFF;
     font-family: 'SMB NES', Arial, sans-serif;
     color: #FFFFFF;
     font-size: 24px;
@@ -20,7 +20,7 @@ body {
     display: none;
 }
 
-/* ABSOLUTE-POSITIONED ELEMENTS */
+/* INTERFACE ELEMENTS */
 
 #logo {
     position: absolute;
@@ -119,7 +119,7 @@ body {
     margin-left: -320px;
     height: 140px;
     width: 640px;
-    z-index: 101;
+    z-index: 100;
 }
 
 #option1 {
@@ -132,7 +132,13 @@ body {
     margin-left: -320px;
     height: 70px;
     width: 320px;
-    z-index: 102;
+    z-index: 100;
+    background-image: url(../images/logo/logo-option.png);
+}
+
+#option1:hover {
+    color: #FFCCC5;
+    cursor: pointer;
 }
 
 #option2 {
@@ -145,7 +151,13 @@ body {
     margin-left: 0px;
     height: 70px;
     width: 320px;
-    z-index: 102;
+    z-index: 100;
+    background-image: url(../images/logo/logo-option.png);
+}
+
+#option2:hover {
+    color: #FFCCC5;
+    cursor: pointer;
 }
 
 #option3 {
@@ -156,9 +168,15 @@ body {
     padding-top: 23px;
     margin-top: 74px;
     margin-left: -320px;
-    height: 70px;
+    height: 47px;
     width: 320px;
-    z-index: 102;
+    z-index: 100;
+    background-image: url(../images/logo/logo-option.png);
+}
+
+#option3:hover {
+    color: #FFCCC5;
+    cursor: pointer;
 }
 
 #option4 {
@@ -169,7 +187,13 @@ body {
     padding-top: 23px;
     margin-top: 74px;
     margin-left: 0px;
-    height: 70px;
+    height: 47px;
     width: 320px;
-    z-index: 102;
+    z-index: 100;
+    background-image: url(../images/logo/logo-option.png);
+}
+
+#option4:hover {
+    color: #FFCCC5;
+    cursor: pointer;
 }
