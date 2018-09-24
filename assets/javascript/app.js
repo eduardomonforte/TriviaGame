@@ -56,6 +56,8 @@ var loseLife = document.createElement("audio");
 loseLife.setAttribute("src", "assets/audio/sounds/lose-life.wav");
 var jumpSound = document.createElement("audio");
 jumpSound.setAttribute("src", "assets/audio/sounds/jump.wav");
+var flagDown = document.createElement("audio");
+flagDown.setAttribute("src", "assets/audio/sounds/flag-down.wav");
 
 $(document).ready(); {
 
@@ -86,10 +88,14 @@ $(document).ready(); {
 
             roundReset = false;
 
-            var time = 60;
+            var time = 60; // CHANGE TO 60 AFTER DEBUGGING.
             var intervalId;
 
+            // The game starts running when the run function is called.
+
             run();
+
+            // This is what the run function does:
 
             function run() {
                 
@@ -115,42 +121,108 @@ $(document).ready(); {
 
                     if (!gameOver) {
 
-                        $("#option1").on("click", function() {
+                        if(!roundReset) {
 
-                            console.log("Option 1");
+                            $("#option1").on("click", function() {
 
-                        });
+                                console.log("Option 1");
 
-                        $("#option2").on("click", function() {
+                            });
 
-                            console.log("Option 2");
+                            $("#option2").on("click", function() {
 
-                        });
+                                console.log("Option 2");
 
-                        $("#option3").on("click", function() {
+                            });
 
-                            console.log("Option 3");
+                            $("#option3").on("click", function() {
 
-                        })
+                                console.log("Option 3");
 
-                        $("#option4").on("click", function() {
+                            })
 
-                            console.log("Option 4");
+                            $("#option4").on("click", function() {
 
-                        })
+                                console.log("Option 4");
 
-                        $(".button").on("click", function() {
+                            })
 
-                            jumpSound.play();
-                        
-                            if (!roundReset) {
+                            $(".button").on("click", function() {
+
+                                if (questionNumber < questions.length) {
+
+                                    jumpSound.play();
+    
+                                }
+    
+                                if (questionNumber === 1) {
+    
+                                    $("#mario1").hide();
+                                    $("#mario2").show();
+    
+                                }
+    
+                                if (questionNumber === 2) {
+    
+                                    $("#mario2").hide();
+                                    $("#mario3").show();
+    
+                                }
+    
+                                if (questionNumber === 3) {
+    
+                                    $("#mario3").hide();
+                                    $("#mario4").show();
+    
+                                }
+    
+                                if (questionNumber === 4) {
+    
+                                    $("#mario4").hide();
+                                    $("#mario5").show();
+    
+                                }
+    
+                                if (questionNumber === questions.length) {
+    
+                                    gameOver = true;
+                                    roundReset = true;
+                                    clearInterval(intervalId);
+                                    $("#mario5").hide();
+                                    $("#flagpole-down").show();
+                                    $("#flagpole-up").hide();
+                                    bgMusic.pause();
+                                    hurryMusic.pause();
+                                    flagDown.play();
+    
+                                    flagDown.onended = function() {
+    
+                                        running = false;
+                                        $("#press-enter").show();
+                                        $("#logo").show();
+                                        $("#flagpole-up").show(); // PROVISIONAL
+                                        $("#mario1").show(); // PROVISIONAL
+                                        $("#trivia-container").hide();
+                                        $("#question-box").hide();
+                                        $("#option1").hide();
+                                        $("#option2").hide();
+                                        $("#option3").hide();
+                                        $("#option4").hide();
+                                        $("#flagpole-down").hide(); // PROVISIONAL
+                                        $("#time-left").html("60");
+                                        questionNumber = 1;
+                                        $(".question-number").html(questionNumber);
+                
+                                    };
+    
+                                }
 
                                 questionNumber++;
                                 $(".question-number").html(questionNumber);
 
-                            };
+                            });
 
-                        });
+                        };
 
                     };
 

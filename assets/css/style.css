@@ -90,25 +90,25 @@ body {
 #mario2 {
     position: absolute;
     bottom: 64px;
-    left: 23%;
+    left: 21%;
 }
 
 #mario3 {
     position: absolute;
     bottom: 64px;
-    left: 41%;
+    left: 39%;
 }
 
 #mario4 {
     position: absolute;
     bottom: 64px;
-    right: 41%;
+    right: 39%;
 }
 
 #mario5 {
     position: absolute;
     bottom: 64px;
-    right: 23%;
+    right: 21%;
 }
 
 #flagpole-up {
