@@ -51,7 +51,6 @@ let time = 60;
 let intervalId;
 
 function run() {
-  console.log("Hi");
   clearInterval(intervalId);
   intervalId = setInterval(decrement, 1000);
   $("#trivia-container").show();
