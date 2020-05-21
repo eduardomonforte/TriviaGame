@@ -138,12 +138,16 @@ body {
   position: absolute;
   top: 35%;
   left: 50%;
-  padding-top: 23px;
+  padding-top: 24px;
   margin-top: -144px;
   margin-left: -320px;
   height: 140px;
   width: 640px;
   z-index: 100;
+}
+
+#question-header {
+  padding-bottom: 24px;
 }
 
 #option1 {

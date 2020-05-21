@@ -4,27 +4,27 @@ const questions = [
   {
     question: "WHAT WAS MARIO'S ORIGINAL NAME?",
     options: ["MARIO", "MR. VIDEO", "OSSAN", "JUMPMAN"],
-    correct: "OSSAN",
+    correct: 3,
   },
   {
     question: "WHO WAS MARIO'S FIRST ENEMY?",
     options: ["LUIGI", "DONKEY KONG", "BOWSER", "WARIO"],
-    correct: "DONKEY KONG",
+    correct: 2,
   },
   {
     question: "WHEN WAS SUPER MARIO BROS. RELEASED?",
     options: ["1982", "1983", "1984", "1985"],
-    correct: "1985",
+    correct: 4,
   },
   {
     question: "WHAT WAS MARIO'S ORIGINAL PROFESSION?",
     options: ["CARPENTER", "PLUMBER", "ELECTRICIAN", "PAINTER"],
-    correct: "CARPENTER",
+    correct: 1,
   },
   {
     question: "WHAT MAKES MARIO GROW IN SIZE?",
     options: ["COIN", "FIRE FLOWER", "MUSHROOM", "STAR"],
-    correct: "MUSHROOM",
+    correct: 3,
   },
 ];
 
@@ -48,11 +48,13 @@ let running = false;
 let gameOver = false;
 let roundReset = false;
 let time = 60;
-let intervalId;
+let countdown;
+let chosenAnswer = 0;
+let currentQuestion = 0;
 
-function run() {
-  clearInterval(intervalId);
-  intervalId = setInterval(decrement, 1000);
+function startGame() {
+  clearInterval(countdown);
+  countdown = setInterval(decrement, 1000);
   $("#trivia-container").show();
   $("#question-box").show();
   $("#option1").show();
@@ -67,22 +69,39 @@ function run() {
   loseLife.load();
   bgMusic.play();
   clickOptions();
+  setQuestions();
+}
+
+function setQuestions() {
+  let i = 0;
+
+  // for (i; i < questions.length; i++) {
+  $("#question-text").text(questions[i].question);
+  $("#option1").text(questions[i].options[0]);
+  $("#option2").text(questions[i].options[1]);
+  $("#option3").text(questions[i].options[2]);
+  $("#option4").text(questions[i].options[3]);
+  // }
 }
 
 function clickOptions() {
   if (!gameOver) {
     if (!roundReset) {
       $("#option1").on("click", function () {
-        console.log("Option 1");
+        chosenAnswer = 1;
+        console.log(chosenAnswer);
       });
       $("#option2").on("click", function () {
-        console.log("Option 2");
+        chosenAnswer = 2;
+        console.log(chosenAnswer);
       });
       $("#option3").on("click", function () {
-        console.log("Option 3");
+        chosenAnswer = 3;
+        console.log(chosenAnswer);
       });
       $("#option4").on("click", function () {
-        console.log("Option 4");
+        chosenAnswer = 4;
+        console.log(chosenAnswer);
       });
       $(".button").on("click", function () {
         if (questionNumber < questions.length) {
@@ -107,7 +126,7 @@ function clickOptions() {
         if (questionNumber === questions.length) {
           gameOver = true;
           roundReset = true;
-          clearInterval(intervalId);
+          clearInterval(countdown);
           $("#mario5").hide();
           $("#flagpole-down").show();
           $("#flagpole-up").hide();
@@ -152,7 +171,7 @@ function decrement() {
   if (time === 0) {
     gameOver = true;
     roundReset = true;
-    clearInterval(intervalId);
+    clearInterval(countdown);
     $("#question-box").hide();
     $("#option1").hide();
     $("#option2").hide();
@@ -176,7 +195,11 @@ $(document).keyup(function (keyPressed) {
   if (keyPressed.keyCode == 13 && running == false) {
     running = true;
     roundReset = false;
-    time = 60;
-    run();
+    resetGame();
+    startGame();
   }
 });
+
+function resetGame() {
+  time = 60;
+}
