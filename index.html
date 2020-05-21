@@ -1,133 +1,134 @@
 <!DOCTYPE html>
 
 <html lang="en">
+  <head>
+    <!-- General HTML Info -->
 
-    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-        <!-- General HTML Info -->
+    <!-- Page Title -->
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Super Mario Trivia</title>
 
-        <!-- Page Title -->
+    <!-- Favicon -->
 
-        <title>Super Mario Trivia</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16 32x32"
+      href="assets/images/sprites/qblock.png"
+    />
 
-        <!-- Favicon -->
+    <!-- Reset CSS -->
 
-        <link rel="icon" type="image/png" sizes="16x16 32x32" href="assets/images/sprites/qblock.png">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
 
-        <!-- Reset CSS -->
+    <!-- Local CSS -->
 
-        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  </head>
 
-        <!-- Local CSS -->
+  <body>
+    <!-- INTERFACE ELEMENTS -->
 
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Super Mario Trivia Logo -->
 
-    </head>
+    <img id="logo" src="assets/images/logo/super-mario-trivia.png" />
 
-    <body>
+    <!-- Trivia Container -->
 
-        <!-- INTERFACE ELEMENTS -->
+    <img
+      id="trivia-container"
+      class="hidden"
+      src="assets/images/logo/logo-container.png"
+    />
 
-        <!-- Super Mario Trivia Logo -->
+    <!-- Press Enter -->
 
-        <img id="logo" src="assets/images/logo/super-mario-trivia.png">
+    <p id="press-enter">PRESS ENTER</p>
 
-        <!-- Trivia Container -->
+    <!-- Question Tracker -->
 
-        <img id="trivia-container" class="hidden" src="assets/images/logo/logo-container.png">
+    <div id="question-tracker">
+      <p>QUESTION</p>
+      <p>
+        <span id="question-round">1</span>-<span class="question-number"
+          >1</span
+        >
+      </p>
+    </div>
 
-        <!-- Press Enter -->
+    <!-- Timer -->
 
-        <p id="press-enter">PRESS ENTER</p>
+    <div id="timer">
+      <p>TIME</p>
+      <p>0<span id="time-left">60</span></p>
+    </div>
 
-        <!-- Question Tracker -->
+    <!-- Clouds -->
 
-        <div id="question-tracker">
+    <img id="cloud1" src="assets/images/sprites/cloud.png" />
+    <img id="cloud2" src="assets/images/sprites/cloud.png" />
+    <img id="cloud3" src="assets/images/sprites/cloud.png" />
 
-            <p>QUESTION</p>
-            <p><span id="question-round">1</span>-<span class="question-number">1</span></p>
+    <!-- Mario -->
 
-        </div>
+    <img id="mario1" src="assets/images/sprites/mario.png" />
+    <img id="mario2" class="hidden" src="assets/images/sprites/mario.png" />
+    <img id="mario3" class="hidden" src="assets/images/sprites/mario.png" />
+    <img id="mario4" class="hidden" src="assets/images/sprites/mario.png" />
+    <img id="mario5" class="hidden" src="assets/images/sprites/mario.png" />
 
-        <!-- Timer -->
+    <!-- Flagpoles -->
 
-        <div id="timer">
+    <img id="flagpole-up" src="assets/images/sprites/flagpole-up.png" />
+    <img
+      id="flagpole-down"
+      class="hidden"
+      src="assets/images/sprites/flagpole-down.png"
+    />
 
-            <p>TIME</p>
-            <p>0<span id="time-left">60</span></p>
+    <!-- Floor -->
 
-        </div>
+    <footer id="floor"></footer>
 
-        <!-- Clouds -->
+    <!-- TRIVIA -->
 
-        <img id="cloud1" src="assets/images/sprites/cloud.png">
-        <img id="cloud2" src="assets/images/sprites/cloud.png">
-        <img id="cloud3" src="assets/images/sprites/cloud.png">
+    <div id="question-box" class="hidden">
+      <p>QUESTION <span class="question-number">1</span></p>
+      <br />
+      <p id="question-text">INSERT QUESTION HERE</p>
+    </div>
 
-        <!-- Mario -->
+    <div id="option1" class="hidden button">
+      OPTION 1
+    </div>
 
-        <img id="mario1" src="assets/images/sprites/mario.png">
-        <img id="mario2" class="hidden" src="assets/images/sprites/mario.png">
-        <img id="mario3" class="hidden" src="assets/images/sprites/mario.png">
-        <img id="mario4" class="hidden" src="assets/images/sprites/mario.png">
-        <img id="mario5" class="hidden" src="assets/images/sprites/mario.png">
+    <div id="option2" class="hidden button">
+      OPTION 2
+    </div>
 
-        <!-- Flagpoles -->
+    <div id="option3" class="hidden button">
+      OPTION 3
+    </div>
 
-        <img id="flagpole-up" src="assets/images/sprites/flagpole-up.png">
-        <img id="flagpole-down" class="hidden" src="assets/images/sprites/flagpole-down.png">
+    <div id="option4" class="hidden button">
+      OPTION 4
+    </div>
 
-        <!-- Floor -->
+    <!-- LINKED SCRIPTS -->
 
-        <footer id="floor"></footer>
+    <!-- JQuery -->
 
-        <!-- TRIVIA -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
 
-        <div id="question-box" class="hidden">
-
-            <p>QUESTION <span class="question-number">1</span></p>
-            <br>
-            <p id="question-text">INSERT QUESTION HERE</p>
-
-        </div>
-
-        <div id="option1" class="hidden button">
-
-            OPTION 1
-
-        </div>
-
-        <div id="option2" class="hidden button">
-
-            OPTION 2
-
-        </div>
-
-        <div id="option3" class="hidden button">
-
-            OPTION 3
-
-        </div>
-
-        <div id="option4" class="hidden button">
-
-            OPTION 4
-
-        </div>
-
-        <!-- LINKED SCRIPTS -->
-
-        <!-- JQuery -->
-
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-        <!-- Local JS -->
-        <script src="assets/javascript/app.js"></script>
-
-    </body>
-
+    <!-- Local JS -->
+    <script src="assets/javascript/app.js"></script>
+  </body>
 </html>
