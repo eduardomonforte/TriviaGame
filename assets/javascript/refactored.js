@@ -4,27 +4,27 @@ const questions = [
   {
     question: "WHAT WAS MARIO'S ORIGINAL NAME?",
     options: ["MARIO", "MR. VIDEO", "OSSAN", "JUMPMAN"],
-    correctOption: "OSSAN",
+    correctOption: 3,
   },
   {
     question: "WHO WAS MARIO'S FIRST ENEMY?",
     options: ["LUIGI", "DONKEY KONG", "BOWSER", "WARIO"],
-    correctOption: "DONKEY KONG",
+    correctOption: 2,
   },
   {
     question: "WHEN WAS SUPER MARIO BROS. RELEASED?",
     options: ["1982", "1983", "1984", "1985"],
-    correctOption: "1985",
+    correctOption: 4,
   },
   {
     question: "WHAT WAS MARIO'S ORIGINAL PROFESSION?",
     options: ["CARPENTER", "PLUMBER", "ELECTRICIAN", "PAINTER"],
-    correctOption: "CARPENTER",
+    correctOption: 1,
   },
   {
     question: "WHAT MAKES MARIO GROW IN SIZE?",
     options: ["COIN", "FIRE FLOWER", "MUSHROOM", "STAR"],
-    correctOption: "MUSHROOM",
+    correctOption: 3,
   },
 ];
 
@@ -39,16 +39,16 @@ let chosenOption = "";
 let gameOver = true;
 let countdown;
 
-const bgMusic = document.createElement("audio");
-bgMusic.setAttribute("src", "assets/audio/music/overworld.mp3");
+const normalMusic = document.createElement("audio");
+normalMusic.setAttribute("src", "assets/audio/music/overworld.mp3");
 const hurryMusic = document.createElement("audio");
 hurryMusic.setAttribute("src", "assets/audio/music/overworld-hurry.mp3");
-const loseLife = document.createElement("audio");
-loseLife.setAttribute("src", "assets/audio/sounds/lose-life.wav");
+const loseLifeSound = document.createElement("audio");
+loseLifeSound.setAttribute("src", "assets/audio/sounds/lose-life.wav");
 const jumpSound = document.createElement("audio");
 jumpSound.setAttribute("src", "assets/audio/sounds/jump.wav");
-const flagDown = document.createElement("audio");
-flagDown.setAttribute("src", "assets/audio/sounds/flag-down.wav");
+const flagDownSound = document.createElement("audio");
+flagDownSound.setAttribute("src", "assets/audio/sounds/flag-down.wav");
 
 const timeLeftElement = $("#time-left");
 const currentRoundElement = $("#current-round");
@@ -74,20 +74,39 @@ const resetGame = () => {
   correctAnswers = 0;
   incorrectAnswers = 0;
   unansweredQuestions = questions.length;
+  resetMusic();
 };
 
 const startGame = () => {
   gameOver = false;
   countdown = setInterval(doEverySecond, 1000);
+  normalMusic.play();
+};
+
+const changeMusic = () => {
+  normalMusic.pause();
+  hurryMusic.play();
+};
+
+const pauseMusic = () => {
+  normalMusic.pause();
+  hurryMusic.pause();
+};
+
+const resetMusic = () => {
+  normalMusic.load();
+  hurryMusic.load();
 };
 
 const doEverySecond = () => {
   timeLeft--;
+  timeLeft === 20 && changeMusic();
+  timeLeft === 0 && loseLifeSound.play();
   timeLeft >= 10
     ? timeLeftElement.text(timeLeft)
     : timeLeftElement.text("0" + timeLeft);
   checkGameOver();
-  isGameOver();
+  ifGameOver();
 };
 
 const checkGameOver = () => {
@@ -96,9 +115,10 @@ const checkGameOver = () => {
   }
 };
 
-const isGameOver = () => {
+const ifGameOver = () => {
   if (gameOver) {
     clearInterval(countdown);
+    pauseMusic();
     showResults();
   }
 };
