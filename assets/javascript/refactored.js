@@ -51,8 +51,12 @@ const flagDown = document.createElement("audio");
 flagDown.setAttribute("src", "assets/audio/sounds/flag-down.wav");
 
 const timeLeftElement = $("#time-left");
-const currentRoundElement = $("#question-round");
-const currentQuestionElement = $(".question-number");
+const currentRoundElement = $("#current-round");
+const currentQuestionElement = $(".current-question");
+
+timeLeftElement.text(timeLeft);
+currentRoundElement.text(currentRound);
+currentQuestionElement.text(currentQuestion);
 
 $(document).keyup(function (keyPressed) {
   if (keyPressed.keyCode == 13 && gameOver) {
@@ -66,10 +70,10 @@ const resetGame = () => {
   currentRoundElement.text(currentRound);
   currentRound++;
   currentQuestion = 1;
+  currentQuestionElement.text(currentQuestion);
   correctAnswers = 0;
   incorrectAnswers = 0;
   unansweredQuestions = questions.length;
-  currentQuestionElement.text(currentQuestion);
 };
 
 const startGame = () => {

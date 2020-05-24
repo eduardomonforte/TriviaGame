@@ -2,134 +2,59 @@
 
 <html lang="en">
   <head>
-    <!-- General HTML Info -->
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-    <!-- Page Title -->
-
     <title>Super Mario Trivia</title>
-
-    <!-- Favicon -->
-
     <link
       rel="icon"
       type="image/png"
       sizes="16x16 32x32"
-      href="assets/images/sprites/qblock.png"
+      href="assets/images/smt-block-question.png"
     />
-
-    <!-- Reset CSS -->
-
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
-
-    <!-- Local CSS -->
-
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css" />
   </head>
-
   <body>
-    <!-- INTERFACE ELEMENTS -->
-
-    <!-- Super Mario Trivia Logo -->
-
-    <img id="logo" src="assets/images/logo/super-mario-trivia.png" />
-
-    <!-- Trivia Container -->
-
-    <img
-      id="trivia-container"
-      class="hidden"
-      src="assets/images/logo/logo-container.png"
-    />
-
-    <!-- Press Enter -->
-
-    <p id="press-enter">PRESS ENTER</p>
-
-    <!-- Question Tracker -->
-
-    <div id="question-tracker">
-      <p>QUESTION</p>
-      <p>
-        <span id="question-round">1</span>-<span class="question-number"
-          >1</span
-        >
-      </p>
-    </div>
-
-    <!-- Timer -->
-
-    <div id="timer">
-      <p>TIME</p>
-      <p>0<span id="time-left">60</span></p>
-    </div>
-
-    <!-- Clouds -->
-
-    <img id="cloud1" src="assets/images/sprites/cloud.png" />
-    <img id="cloud2" src="assets/images/sprites/cloud.png" />
-    <img id="cloud3" src="assets/images/sprites/cloud.png" />
-
-    <!-- Mario -->
-
-    <img id="mario1" src="assets/images/sprites/mario.png" />
-    <img id="mario2" class="hidden" src="assets/images/sprites/mario.png" />
-    <img id="mario3" class="hidden" src="assets/images/sprites/mario.png" />
-    <img id="mario4" class="hidden" src="assets/images/sprites/mario.png" />
-    <img id="mario5" class="hidden" src="assets/images/sprites/mario.png" />
-
-    <!-- Flagpoles -->
-
-    <img id="flagpole-up" src="assets/images/sprites/flagpole-up.png" />
-    <img
-      id="flagpole-down"
-      class="hidden"
-      src="assets/images/sprites/flagpole-down.png"
-    />
-
-    <!-- Floor -->
-
-    <footer id="floor"></footer>
-
-    <!-- TRIVIA -->
-
-    <div id="question-box" class="hidden">
-      <p id="question-header">
-        QUESTION <span class="question-number">1</span>
-      </p>
-      <p id="question-text">INSERT QUESTION HERE</p>
-    </div>
-
-    <div id="option1" class="hidden button">
-      OPTION 1
-    </div>
-
-    <div id="option2" class="hidden button">
-      OPTION 2
-    </div>
-
-    <div id="option3" class="hidden button">
-      OPTION 3
-    </div>
-
-    <div id="option4" class="hidden button">
-      OPTION 4
-    </div>
-
-    <!-- LINKED SCRIPTS -->
-
-    <!-- JQuery -->
-
+    <header>
+      <section id="question-tracker">
+        <p>
+          QUESTION
+        </p>
+        <p id="question-info">
+          <span id="current-round">1</span>
+          -
+          <span class="current-question">1</span>
+        </p>
+        </span>
+      </section>
+      <section id="time-tracker">
+        <p>
+          TIME
+        </p>
+        <p>0<span id="time-left">60</span></p>
+      </section>
+    </header>
+    <section id="game-container">
+      <img id="logo" src="assets/images/smt-logo.png" />
+      <section id="question-container"></section>
+      <section id="options-container"></section>
+    </section>
+    <p id="cta">PRESS ENTER</p>
+    <section id="sprites-container">
+      <img id="cloud1" class="cloud" src="assets/images/smt-cloud.png" />
+      <img id="cloud2" class="cloud" src="assets/images/smt-cloud.png" />
+      <img id="cloud3" class="cloud" src="assets/images/smt-cloud.png" />
+      <img id="mario" class="mario-1" src="assets/images/smt-mario.png" />
+      <img id="flagpole-up" class="flagpole" src="assets/images/smt-flagpole-up.png" />
+      <img id="flagpole-down" class="flagpole hidden" src="assets/images/smt-flagpole-down.png" />
+    </section>
+    <footer></footer>
     <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
       crossorigin="anonymous"
     ></script>
-
-    <!-- Local JS -->
     <script src="assets/javascript/refactored.js"></script>
   </body>
 </html>
