@@ -53,6 +53,9 @@ flagDownSound.setAttribute("src", "assets/audio/sounds/flag-down.wav");
 const timeLeftElement = $("#time-left");
 const currentRoundElement = $("#current-round");
 const currentQuestionElement = $(".current-question");
+const logoElement = $("#logo");
+const ctaElement = $("#cta");
+const triviaContainerElement = $("#trivia-container");
 
 timeLeftElement.text(timeLeft);
 currentRoundElement.text(currentRound);
@@ -81,6 +84,9 @@ const startGame = () => {
   gameOver = false;
   countdown = setInterval(doEverySecond, 1000);
   normalMusic.play();
+  logoElement.hide();
+  ctaElement.hide();
+  triviaContainerElement.show();
 };
 
 const changeMusic = () => {
