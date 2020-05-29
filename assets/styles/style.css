@@ -2,27 +2,37 @@
   font-family: "SMB NES";
   src: url("fonts/super-mario-bros-nes.ttf") format("truetype");
 }
-
 body {
   background-color: #6b8cff;
   font-family: "SMB NES", Arial, sans-serif;
   color: #ffffff;
   font-size: 24px;
 }
-
-header {
+body header {
   display: flex;
   padding: 16px;
 }
-
-.main-container {
+body header .question-tracker {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+body header .question-tracker .question-info {
+  display: flex;
+}
+body header .time-tracker {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: flex-end;
+}
+body .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 32px 16px;
 }
-
-.game-container {
+body .main-container .game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,26 +41,25 @@ header {
   width: 704px;
   background-image: url("../images/smt-game-container.png");
 }
-
-.question-container {
+body .main-container .game-container .logo {
+  content: url("../images/smt-logo-optimized.png");
+}
+body .main-container .game-container .trivia-container .question-container {
   width: 640px;
   padding: 16px;
   text-align: center;
 }
-
-.question-title {
+body .main-container .game-container .trivia-container .question-container .question-title {
   padding-bottom: 16px;
 }
-
-.options-container {
+body .main-container .game-container .trivia-container .options-container {
   display: flex;
   flex-wrap: wrap;
   height: 144px;
   width: 640px;
   padding: 16px;
 }
-
-.option {
+body .main-container .game-container .trivia-container .options-container .option {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,17 +67,11 @@ header {
   width: 320px;
   background-image: url("../images/smt-option-container.png");
 }
-
-.option:hover {
+body .main-container .game-container .trivia-container .options-container .option:hover {
   color: #ffccc5;
   cursor: pointer;
 }
-
-.logo {
-  content: url("../images/smt-logo-optimized.png");
-}
-
-.cta-container {
+body .main-container .cta-container {
   width: 704px;
   margin: 40px 16px;
   animation-name: cta-changing-color;
@@ -76,45 +79,14 @@ header {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-
-footer {
-  position: absolute;
-  bottom: 0;
-  height: 64px;
-  width: 100%;
-  background-image: url("../images/smt-block.png");
-}
-
-/* SUBSECTIONS */
-
-.question-tracker {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-}
-
-.question-info {
-  display: flex;
-}
-
-.time-tracker {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  align-items: flex-end;
-}
-
-/* SPRITES */
-
-.flagpole {
+body .sprites .flagpole {
   position: absolute;
   bottom: 64px;
   right: 5%;
   z-index: -1;
   content: url("../images/smt-flagpole-up.png");
 }
-
-.mario {
+body .sprites .mario {
   position: absolute;
   bottom: 64px;
   left: 5%;
@@ -123,10 +95,9 @@ footer {
   animation-name: mario-jumping-up;
   animation-duration: 1s;
   animation-timing-function: linear;
-  /* animation-iteration-count: infinite; */
+  animation-iteration-count: infinite;
 }
-
-.cloud {
+body .sprites .cloud {
   position: absolute;
   left: -192px;
   z-index: -2;
@@ -136,23 +107,26 @@ footer {
   animation-timing-function: linear;
   content: url("../images/smt-cloud.png");
 }
-
-.cloud-1 {
+body .sprites .cloud-1 {
   top: 10%;
   animation-delay: -4s;
 }
-
-.cloud-2 {
+body .sprites .cloud-2 {
   top: 35%;
 }
-
-.cloud-3 {
+body .sprites .cloud-3 {
   top: 60%;
   animation-delay: -8s;
 }
+body footer {
+  position: absolute;
+  bottom: 0;
+  height: 64px;
+  width: 100%;
+  background-image: url("../images/smt-block.png");
+}
 
 /* STATE */
-
 .hidden {
   display: none;
 }
@@ -170,7 +144,6 @@ footer {
 }
 
 /* ANIMATIONS */
-
 @keyframes clouds-moving-right {
   0% {
     left: -192px;
@@ -179,7 +152,6 @@ footer {
     left: 100%;
   }
 }
-
 @keyframes cta-changing-color {
   0% {
     color: #ffffff;
@@ -191,7 +163,6 @@ footer {
     color: #ffffff;
   }
 }
-
 @keyframes mario-jumping-up {
   0% {
     content: url("../images/smt-mario-jumping.png");
@@ -203,3 +174,5 @@ footer {
     content: url("../images/smt-mario-jumping.png");
   }
 }
+
+/*# sourceMappingURL=style.css.map */

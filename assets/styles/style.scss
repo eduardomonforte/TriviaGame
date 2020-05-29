@@ -1,0 +1,201 @@
+@font-face {
+  font-family: "SMB NES";
+  src: url("fonts/super-mario-bros-nes.ttf") format("truetype");
+}
+
+body {
+  background-color: #6b8cff;
+  font-family: "SMB NES", Arial, sans-serif;
+  color: #ffffff;
+  font-size: 24px;
+
+  header {
+    display: flex;
+    padding: 16px;
+
+    .question-tracker {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      .question-info {
+        display: flex;
+      }
+    }
+
+    .time-tracker {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      align-items: flex-end;
+    }
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+
+    .game-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 352px;
+      width: 704px;
+      background-image: url("../images/smt-game-container.png");
+
+      .logo {
+        content: url("../images/smt-logo-optimized.png");
+      }
+
+      .trivia-container {
+        .question-container {
+          width: 640px;
+          padding: 16px;
+          text-align: center;
+          .question-title {
+            padding-bottom: 16px;
+          }
+        }
+        .options-container {
+          display: flex;
+          flex-wrap: wrap;
+          height: 144px;
+          width: 640px;
+          padding: 16px;
+          .option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 72px;
+            width: 320px;
+            background-image: url("../images/smt-option-container.png");
+            &:hover {
+              color: #ffccc5;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .cta-container {
+      width: 704px;
+      margin: 40px 16px;
+      animation-name: cta-changing-color;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+
+  .sprites {
+    .flagpole {
+      position: absolute;
+      bottom: 64px;
+      right: 5%;
+      z-index: -1;
+      content: url("../images/smt-flagpole-up.png");
+    }
+
+    .mario {
+      position: absolute;
+      bottom: 64px;
+      left: 5%;
+      z-index: -1;
+      content: url("../images/smt-mario.png");
+      animation-name: mario-jumping-up;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .cloud {
+      position: absolute;
+      left: -192px;
+      z-index: -2;
+      animation-name: clouds-moving-right;
+      animation-duration: 12s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      content: url("../images/smt-cloud.png");
+    }
+
+    .cloud-1 {
+      top: 10%;
+      animation-delay: -4s;
+    }
+
+    .cloud-2 {
+      top: 35%;
+    }
+
+    .cloud-3 {
+      top: 60%;
+      animation-delay: -8s;
+    }
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    height: 64px;
+    width: 100%;
+    background-image: url("../images/smt-block.png");
+  }
+}
+
+/* STATE */
+
+.hidden {
+  display: none;
+}
+
+.front-row {
+  z-index: 0;
+}
+
+.middle-row {
+  z-index: -1;
+}
+
+.back-row {
+  z-index: -2;
+}
+
+/* ANIMATIONS */
+
+@keyframes clouds-moving-right {
+  0% {
+    left: -192px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes cta-changing-color {
+  0% {
+    color: #ffffff;
+  }
+  50% {
+    color: #ffccc5;
+  }
+  100% {
+    color: #ffffff;
+  }
+}
+
+@keyframes mario-jumping-up {
+  0% {
+    content: url("../images/smt-mario-jumping.png");
+  }
+  50% {
+    bottom: 120px;
+  }
+  100% {
+    content: url("../images/smt-mario-jumping.png");
+  }
+}
