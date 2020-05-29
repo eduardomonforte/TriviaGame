@@ -50,12 +50,12 @@ jumpSound.setAttribute("src", "assets/audio/sounds/jump.wav");
 const flagDownSound = document.createElement("audio");
 flagDownSound.setAttribute("src", "assets/audio/sounds/flag-down.wav");
 
-const timeLeftElement = $("#time-left");
-const currentRoundElement = $("#current-round");
+const timeLeftElement = $(".time-left");
+const currentRoundElement = $(".current-round");
 const currentQuestionElement = $(".current-question");
-const logoElement = $("#logo");
-const ctaElement = $("#cta");
-const triviaContainerElement = $("#trivia-container");
+const logoElement = $(".logo");
+const ctaElement = $(".cta");
+const triviaContainerElement = $(".trivia-container");
 
 timeLeftElement.text(timeLeft);
 currentRoundElement.text(currentRound);
@@ -102,6 +102,25 @@ const pauseMusic = () => {
 const resetMusic = () => {
   normalMusic.load();
   hurryMusic.load();
+};
+
+const onClickOptions = () => {
+  $("#option1").on("click", function () {
+    chosenAnswer = 1;
+    console.log(chosenAnswer);
+  });
+  $("#option2").on("click", function () {
+    chosenAnswer = 2;
+    console.log(chosenAnswer);
+  });
+  $("#option3").on("click", function () {
+    chosenAnswer = 3;
+    console.log(chosenAnswer);
+  });
+  $("#option4").on("click", function () {
+    chosenAnswer = 4;
+    console.log(chosenAnswer);
+  });
 };
 
 const doEverySecond = () => {

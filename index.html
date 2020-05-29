@@ -17,57 +17,60 @@
   </head>
   <body>
     <header>
-      <section id="question-tracker">
+      <section class="question-tracker">
         <p>
           QUESTION
         </p>
-        <p id="question-info">
-          <span id="current-round">1</span>
+        <p class="question-info">
+          <span class="current-round">1</span>
           -
           <span class="current-question">1</span>
         </p>
         </span>
       </section>
-      <section id="time-tracker">
+      <section class="time-tracker">
         <p>
           TIME
         </p>
-        <p>0<span id="time-left">60</span></p>
+        <p>0<span class="time-left">60</span></p>
       </section>
     </header>
-    <section id="game-container">
-      <img id="logo" src="assets/images/smt-logo-optimized.png" />
-      <section id="trivia-container" class="hidden">
-        <section id="question-container">
-          <p id="question-title">QUESTION <span class="current-question">1</span></p>
-          <p id="question-text">
-            YOUR QUESTION GOES HERE
-          </p>
-        </section>
-        <section id="options-container">
-          <section id="option-1" class="option">
-            OPTION 1
+    <section class="main-container">
+      <section class="game-container">
+        <img class="logo" />
+        <section class="trivia-container hidden">
+          <section class="question-container">
+            <p class="question-title">QUESTION <span class="current-question">1</span></p>
+            <p class="question-text">
+              YOUR QUESTION GOES HERE
+            </p>
           </section>
-          <section id="option-2" class="option">
-            OPTION 2
-          </section>
-          <section id="option-3" class="option">
-            OPTION 3
-          </section>
-          <section id="option-4" class="option">
-            OPTION 4
+          <section class="options-container">
+            <section class="option option-1">
+              OPTION 1
+            </section>
+            <section class="option option-2">
+              OPTION 2
+            </section>
+            <section class="option option-3">
+              OPTION 3
+            </section>
+            <section class="option option-4">
+              OPTION 4
+            </section>
           </section>
         </section>
       </section>
+      <section class="cta-container">
+        <p>PRESS ENTER</p>
+      </section>
     </section>
-    <p id="cta">PRESS ENTER</p>
-    <section id="sprites-container">
-      <img id="cloud1" class="cloud" src="assets/images/smt-cloud.png" />
-      <img id="cloud2" class="cloud" src="assets/images/smt-cloud.png" />
-      <img id="cloud3" class="cloud" src="assets/images/smt-cloud.png" />
-      <img id="mario" class="mario-1" src="assets/images/smt-mario.png" />
-      <img id="flagpole-up" class="flagpole" src="assets/images/smt-flagpole-up.png" />
-      <img id="flagpole-down" class="flagpole hidden" src="assets/images/smt-flagpole-down.png" />
+    <section class="sprites">
+      <img class="cloud cloud-1" />
+      <img class="cloud cloud-2" />
+      <img class="cloud cloud-3" />
+      <img class="mario" />
+      <img class="flagpole"/>
     </section>
     <footer></footer>
     <script

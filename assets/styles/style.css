@@ -10,35 +10,39 @@ body {
   font-size: 24px;
 }
 
-/* SECTIONS */
-
 header {
   display: flex;
-  margin: 16px;
+  padding: 16px;
 }
 
-#game-container {
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+}
+
+.game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 80px auto 0 auto;
   height: 352px;
   width: 704px;
   background-image: url("../images/smt-game-container.png");
 }
 
-#question-container {
+.question-container {
   width: 640px;
   padding: 16px;
   text-align: center;
 }
 
-#question-title {
+.question-title {
   padding-bottom: 16px;
 }
 
-#options-container {
+.options-container {
   display: flex;
   flex-wrap: wrap;
   height: 144px;
@@ -60,11 +64,14 @@ header {
   cursor: pointer;
 }
 
-#cta {
-  display: flex;
-  justify-content: center;
+.logo {
+  content: url("../images/smt-logo-optimized.png");
+}
+
+.cta-container {
+  width: 704px;
   margin: 40px 16px;
-  animation-name: cta-changing-colors;
+  animation-name: cta-changing-color;
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -80,17 +87,17 @@ footer {
 
 /* SUBSECTIONS */
 
-#question-tracker {
+.question-tracker {
   display: flex;
   flex-direction: column;
   width: 50%;
 }
 
-#question-info {
+.question-info {
   display: flex;
 }
 
-#time-tracker {
+.time-tracker {
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -103,32 +110,43 @@ footer {
   position: absolute;
   bottom: 64px;
   right: 5%;
+  z-index: -1;
+  content: url("../images/smt-flagpole-up.png");
 }
 
-#mario {
+.mario {
   position: absolute;
+  bottom: 64px;
+  left: 5%;
+  z-index: -1;
+  content: url("../images/smt-mario.png");
+  animation-name: mario-jumping-up;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  /* animation-iteration-count: infinite; */
 }
 
 .cloud {
   position: absolute;
-  z-index: -1;
   left: -192px;
+  z-index: -2;
   animation-name: clouds-moving-right;
   animation-duration: 12s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  content: url("../images/smt-cloud.png");
 }
 
-#cloud1 {
+.cloud-1 {
   top: 10%;
   animation-delay: -4s;
 }
 
-#cloud2 {
+.cloud-2 {
   top: 35%;
 }
 
-#cloud3 {
+.cloud-3 {
   top: 60%;
   animation-delay: -8s;
 }
@@ -139,29 +157,16 @@ footer {
   display: none;
 }
 
-.mario-1 {
-  bottom: 64px;
-  left: 5%;
+.front-row {
+  z-index: 0;
 }
 
-.mario-2 {
-  bottom: 64px;
-  left: 21%;
+.middle-row {
+  z-index: -1;
 }
 
-.mario-3 {
-  bottom: 64px;
-  left: 39%;
-}
-
-.mario-4 {
-  bottom: 64px;
-  right: 39%;
-}
-
-.mario-5 {
-  bottom: 64px;
-  right: 21%;
+.back-row {
+  z-index: -2;
 }
 
 /* ANIMATIONS */
@@ -175,7 +180,7 @@ footer {
   }
 }
 
-@keyframes cta-changing-colors {
+@keyframes cta-changing-color {
   0% {
     color: #ffffff;
   }
@@ -184,5 +189,17 @@ footer {
   }
   100% {
     color: #ffffff;
+  }
+}
+
+@keyframes mario-jumping-up {
+  0% {
+    content: url("../images/smt-mario-jumping.png");
+  }
+  50% {
+    bottom: 120px;
+  }
+  100% {
+    content: url("../images/smt-mario-jumping.png");
   }
 }
